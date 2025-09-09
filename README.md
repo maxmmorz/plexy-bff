@@ -29,9 +29,7 @@
     <br/> 
 </p>
 
-<p>NestJS es un framework progresivo de Node.js para la creación de aplicaciones eficientes, confiables y escalables del
-lado del servidor, el cual está construido y es completamente compatible con TypeScript y JavaScript, combinando
-elementos de la programación orientada a objetos, programación funcional y programación reactiva funcional.</p>
+<p>NestJS is a progressive Node.js framework for building efficient, reliable, and scalable server-side applications. It is built with and fully compatible with TypeScript and JavaScript, combining elements of object-oriented programming, functional programming, and reactive functional programming.</p>
 <br>
 <div>
     <a href="https://railway.app/template/BOGqHd?referralCode=mexdelgado" target="_blank">
@@ -42,19 +40,19 @@ elementos de la programación orientada a objetos, programación funcional y pro
     </a>
 </div>
 
-## Glosario
+## Table of Contents
 
 - [🥳 Demo](https://nestjs-starter.tresdoce.com.ar/v1)
-- [🤓 Objetivo](#objective)
-- [📝 Requerimientos básicos](#basic-requirements)
-- [🛠️ Instalar dependencias](#install-dependencies)
-- [⚙️ Configuración](#configurations)
+- [🤓 Objective](#objective)
+- [📝 Basic Requirements](#basic-requirements)
+- [🛠️ Install Dependencies](#install-dependencies)
+- [⚙️ Configuration](#configurations)
 - [💻 Scripts](#scripts)
 - [📚 Swagger](#swagger-info)
 - [🐳 Docker](#docker)
 - [🧰 Toolkit](https://github.com/tresdoce/tresdoce-nestjs-toolkit)
 - [📤 Commits](#commits)
-- [🏷️ Versionado](#versioning)
+- [🏷️ Versioning](#versioning)
 - [📄 Changelog](./CHANGELOG.md)
 - [📜 License MIT](license.md)
 
@@ -62,50 +60,49 @@ elementos de la programación orientada a objetos, programación funcional y pro
 
 <a name="objective"></a>
 
-## 🤓 Objetivo
+## 🤓 Objective
 
-### Extensibilidad
+### Extensibility
 
-Gracias a su arquitectura modular, es flexible y nos permite utilizar las otras bibliotecas existentes en nuestro proyecto.
+Thanks to its modular architecture, it is flexible and allows us to use other existing libraries in our project.
 
-### Arquitectura
+### Architecture
 
-Tiene una arquitectura de proyecto que proporciona capacidad de prueba, escalabilidad y mantenimiento sin mucho esfuerzo.
+It has a project architecture that provides testability, scalability, and maintainability without much effort.
 
-### Versatilidad
+### Versatility
 
-Proporciona un ecosistema adaptable, el cual está desarrollado para crear todo tipo de aplicaciones del lado del servidor.
+Provides an adaptable ecosystem, which is developed to create all types of server-side applications.
 
-### Progresividad
+### Progressiveness
 
-Hace uso de las últimas funciones de JavaScript e implementa soluciones maduras y patrones de diseño en el desarrollo de software.
+Makes use of the latest JavaScript features and implements mature solutions and design patterns in software development.
 
-### Transaccionalidad
+### Transactionality
 
-Orquestación de servicios. El BFF es responsable de orquestar la llamada a los distintos servicios y manejarlos transaccionalmente de manera transparente para el cliente.
+Service orchestration. The BFF is responsible for orchestrating calls to different services and managing them transactionally in a transparent way for the client.
 
 ### Performance
 
-Reduce envío de datos. Las API's del BFF se diseñó tomando como base los requerimientos de las pantallas y solo se expondrán los datos que requieran las mismas. Sesión de usuario/caché. Puede manejar caché de sesión para la experiencia del frontend.
+Reduces data transmission. The BFF APIs are designed based on screen requirements and only expose the data they require. User session/cache. Can handle session caching for frontend experience.
 
-### Seguridad
+### Security
 
-Reduce exposición de datos sensibles. El BFF contiene API's que filtran estos datos y solo se exponen los datos necesarios. Gestión de tokens. El BFF es quien se encarga del almacenamiento y gestiona la renovación del access-token.
+Reduces exposure of sensitive data. The BFF contains APIs that filter this data and only expose necessary data. Token management. The BFF is responsible for storage and manages access-token renewal.
 
 <a name="basic-requirements"></a>
 
-## 📝 Requerimientos básicos
+## 📝 Basic Requirements
 
-- Node.js v20.19.3 or higher ([Download](https://nodejs.org/es/download/))
-- YARN ≥ 1.22.22 o NPM ≥ 11.5.2
-- NestJS v11.1.6 or higher ([Documentación](https://nestjs.com/))
+- Node.js v20.19.3 or higher ([Download](https://nodejs.org/en/download/))
+- YARN ≥ 1.22.22 or NPM ≥ 11.5.2
+- NestJS v11.1.6 or higher ([Documentation](https://nestjs.com/))
 
 <a name="install-dependencies"></a>
 
-## 🛠️ Instalar dependencias
+## 🛠️ Install Dependencies
 
-Cuando tenemos los requisitos básicos, clonamos el repositorio, vamos a la carpeta del proyecto e instalamos sus
-dependencias.
+Once we have the basic requirements, we clone the repository, go to the project folder and install its dependencies.
 
 ```
 yarn install
@@ -117,13 +114,11 @@ npm install
 
 <a name="configurations"></a>
 
-## ⚙️ Configuración
+## ⚙️ Configuration
 
-Este starter viene con el archivo **.env.example** y **.env.test**, el cual contiene las configuraciones básicas para
-que funcione la aplicación.
+This starter comes with the **.env.example** and **.env.test** files, which contain the basic configurations for the application to work.
 
-Para el entorno de desarrollo local, es necesario contar con un archivo **.env** del cual se puede utilizar el archivo
-de ejemplo para generarlo.
+For the local development environment, it is necessary to have a **.env** file which can be generated using the example file.
 
 ```sh
 # SERVER
@@ -150,79 +145,76 @@ RICK_AND_MORTY_API_URL=https://rickandmortyapi.com/api
 ```
 
 <details>
-<summary>💬 Para ver en detalle todas las propiedades de la configuración, hace click acá.</summary>
+<summary>💬 To see all configuration properties in detail, click here.</summary>
 
 #### Server
 
-`APP_STAGE`: Es el entorno en el que está corriendo la aplicación.
+`APP_STAGE`: The environment in which the application is running.
 
 - Type: `String`
 - Default: `local`
 - Values: `local | test | snd | dev | qa | homo | prod`
 
-`PORT`: Es el puerto por el cual va a correr el servidor.
+`PORT`: The port on which the server will run.
 
 - Type: `Number`
 - Default: `8080`
 
-`API_PREFIX`: Es el prefijo que hace referencia a la api, y alimenta otros módulos, como es el de los filter exceptions.
+`API_PREFIX`: The prefix that references the API and feeds other modules, such as the filter exceptions.
 
 - Type: `String`
 - Default: `TD_MY_API`
 
-`CONTEXT`: Es el contexto el que se puede acceder a la API del servidor, de esta manera no se exponen los endpoints en
-la ruta principal de la aplicación. Se escribe sin el `/` (slash).
+`CONTEXT`: The context through which the server API can be accessed, so endpoints are not exposed on the main application route. Written without the `/` (slash).
 
 - Type: `String`
 - Default: `v1`
 
-`ORIGINS`: Es una whitelist para que la aplicación sólo pueda ser consumida por urls confiables y evitar cualquier tipo
-de solicitudes no deseadas y maliciosas. Debes escribir las urls separadas por una coma.
+`ORIGINS`: A whitelist so the application can only be consumed by trusted URLs and avoid any unwanted and malicious requests. You must write the URLs separated by commas.
 
 - Type: `String`
 - Default: `http://localhost:3000,http://localhost:8080`
 
-`ALLOWED_HEADERS`: Parámetros que va a recibir por el header en los request.
+`ALLOWED_HEADERS`: Parameters that will be received in the header of requests.
 
 - Type: `String`
 - Default: `Content-Type,Authorization,Set-Cookie,Access-Control-Allow-Origin,Cache-Control,Pragma`
 
-`ALLOWED_METHODS`: Métodos http disponibles para el cors.
+`ALLOWED_METHODS`: HTTP methods available for CORS.
 
 - Type: `String`
 - Default: `GET,HEAD,PUT,POST,DELETE,PATCH,OPTIONS`
 
-`PROPAGATE_HEADERS`: Lista de headers que desea propagar en la respuesta del controller.
+`PROPAGATE_HEADERS`: List of headers you want to propagate in the controller response.
 
 - Type: `String`
 - Example: `x-custom-header,x-custom-header-2,x-custom-header-n`
 
-`CORS_ENABLED`: Habilita o deshabilita el uso de CORS en el servidor.
+`CORS_ENABLED`: Enables or disables the use of CORS on the server.
 
 - Type: `Boolean`
 - Default: `false`
 
-`CORS_CREDENTIALS`: Habilita o deshabilita el uso de las credenciales en las peticiones CORS en el servidor.
+`CORS_CREDENTIALS`: Enables or disables the use of credentials in CORS requests on the server.
 
 - Type: `Boolean`
 - Default: `false`
 
 #### Swagger
 
-`SWAGGER_PATH`: Define la ruta de la documentación **Swagger**, se escribe sin el `/` (slash).
+`SWAGGER_PATH`: Defines the **Swagger** documentation path, written without the `/` (slash).
 
 - Type: `String`
 - Default: `docs`
 
-`SWAGGER_ENABLED`: Habilitar o deshabilitar la documentación **Swagger** de los endpoints del servidor.
+`SWAGGER_ENABLED`: Enable or disable **Swagger** documentation for server endpoints.
 
 - Type: `Boolean`
 - Default: `true`
 
-#### Params, Services y Otros environments
+#### Params, Services and Other Environments
 
-A modo de ejemplo, se pueden cargar todas las variables de entorno que requieras, es importante seguir con el esquema
-de `key:value` para configurarlas.
+As an example, you can load all the environment variables you need, it's important to follow the `key:value` schema to configure them.
 
 ```
 # PARAMS
@@ -234,21 +226,17 @@ RICK_AND_MORTY_API_URL=https://rickandmortyapi.com/api
 
 </details>
 
-Este proyecto utiliza el módulo `@nestjs/config`, el cual centraliza todas las variables de entorno en un solo lugar y
-te permite consumirlas como **typing** para evitar errores de typo, como asi también evitar usar el **process.env** en
-todo el proyecto, lo que te permite darle soporte más fácil si se requiere cambiar el **KEY** de la variable de entorno.
+This project uses the `@nestjs/config` module, which centralizes all environment variables in one place and allows you to consume them as **typing** to avoid typo errors, as well as avoid using **process.env** throughout the project, which allows easier support if you need to change the **KEY** of the environment variable.
 
-También cuenta con un validador de variables de entorno, que nos permite validar el tipo de dato, si es requerido o no
-dicha variable, y muchas validaciones más.
+It also has an environment variable validator, which allows us to validate the data type, whether or not the variable is required, and many more validations.
 
-Todos estos features los podemos encontrar en la carpeta **./src/config**, en dicha carpeta podemos encontrar el archivo
-**environments.ts** que es un manejador de env files dependiendo el **NODE_ENV** que tenga nuestra aplicación.
+All these features can be found in the **./src/config** folder, where we can find the **environments.ts** file which is an env files handler depending on the **NODE_ENV** our application has.
 
 <a name="scripts"></a>
 
 ## 💻 Scripts
 
-Inicia la aplicación en modo desarrollo
+Start the application in development mode
 
 ```
 yarn start:dev
@@ -258,7 +246,7 @@ yarn start:dev
 npm run start:dev
 ```
 
-Inicia los test con coverage
+Start tests with coverage
 
 ```
 yarn test
@@ -268,7 +256,7 @@ yarn test
 npm run test
 ```
 
-Realiza el build de la aplicación
+Build the application
 
 ```
 yarn build
@@ -278,7 +266,7 @@ yarn build
 npm run build
 ```
 
-Inicia la aplicación en modo productivo
+Start the application in production mode
 
 ```
 yarn start
@@ -288,9 +276,9 @@ yarn start
 npm run start
 ```
 
-#### Otros scripts
+#### Other Scripts
 
-Formatea el código
+Format the code
 
 ```
 yarn format
@@ -300,7 +288,7 @@ yarn format
 npm run format
 ```
 
-Eslintea el código
+Lint the code
 
 ```
 yarn lint
@@ -314,14 +302,11 @@ npm run lint
 
 ## 📚 Swagger
 
-El proyecto cuenta con un **Swagger** (OpenAPI 3.0.0) que tiene documentado los endpoints con sus
-definiciones. [Demo Swagger](https://nestjs-starter.tresdoce.com.ar/v1/docs/)
+The project has **Swagger** (OpenAPI 3.0.0) that documents the endpoints with their definitions. [Demo Swagger](https://nestjs-starter.tresdoce.com.ar/v1/docs/)
 
-Para expandir la documentación, es importante aplicar los decoradores correspondientes a la
-aplicación. [NestJS OpenApi](https://docs.nestjs.com/openapi/introduction)
+To expand the documentation, it is important to apply the corresponding decorators to the application. [NestJS OpenApi](https://docs.nestjs.com/openapi/introduction)
 
-Esta documentación puede ser activada o desactivada desde la configuración por medio las variables de entorno del
-proyecto.
+This documentation can be activated or deactivated from the configuration through the project's environment variables.
 
 ```sh
 SWAGGER_PATH=docs
@@ -330,7 +315,7 @@ SWAGGER_ENABLED=true
 
 #### URL
 
-Acceso a la documentación y testeo de los endpoints: `http://localhost:8080/v1/docs`
+Access to documentation and endpoint testing: `http://localhost:8080/v1/docs`
 
 #### Scheme
 
@@ -338,10 +323,9 @@ Acceso a la documentación y testeo de los endpoints: `http://localhost:8080/v1/
 <http|https>://<server_url><:port>/<app-context>/<swagger-path>
 ```
 
-#### Exportar el swagger en JSON
+#### Export Swagger to JSON
 
-Se puede exportar la documentación a un **JSON** agregando el sufijo **-json** al path
-definido. [Demo Swagger JSON](https://nestjs-starter.tresdoce.com.ar/v1/docs-json)
+You can export the documentation to **JSON** by adding the **-json** suffix to the defined path. [Demo Swagger JSON](https://nestjs-starter.tresdoce.com.ar/v1/docs-json)
 
 - Default: `http://localhost:8080/v1/docs-json`
 - Schema: `<http|https>://<server_url><:port>/<app-context>/<swagger-path>-json`
@@ -350,7 +334,7 @@ definido. [Demo Swagger JSON](https://nestjs-starter.tresdoce.com.ar/v1/docs-jso
 
 ## 🐳 Docker
 
-El proyecto cuenta con un `dockerfile` y un `docker-compose.yml` de base, listo para utilizar y expandir sus capacidades.
+The project has a base `dockerfile` and `docker-compose.yml`, ready to use and expand its capabilities.
 
 ### Docker Build
 
@@ -372,8 +356,7 @@ docker run -d -p 8080:8080 --name nestjs-starter-app --env-file .env nestjs-star
 
 ## 📤 Commits
 
-Para los mensajes de commits se toma como
-referencia [`conventional commits`](https://www.conventionalcommits.org/en/v1.0.0/#summary).
+For commit messages, [`conventional commits`](https://www.conventionalcommits.org/en/v1.0.0/#summary) is used as reference.
 
 ```
 <type>[optional scope]: <description>
@@ -383,9 +366,9 @@ referencia [`conventional commits`](https://www.conventionalcommits.org/en/v1.0.
 [optional footer]
 ```
 
-- **type:** chore, docs, feat, fix, refactor (más comunes)
-- **scope:** indica la página, componente, funcionalidad
-- **description:** comienza en minúsculas y no debe superar los 72 caracteres.
+- **type:** chore, docs, feat, fix, refactor (most common)
+- **scope:** indicates the page, component, functionality
+- **description:** starts in lowercase and should not exceed 72 characters.
 
 ### Ejemplo
 
@@ -401,16 +384,14 @@ git commit -am 'feat!: changes in application'
 
 <a name="versioning"></a>
 
-## 🏷️ Versionado
+## 🏷️ Versioning
 
-Este starter cuenta con la posibilidad de auto versionarse por medio del workflow de GitHub Actions (`./.github/workflows/release.yml`),
-ya que utiliza la dependencia [standard-version](https://github.com/conventional-changelog/standard-version) y los
-`conventional commits` del repositorio. Actualmente, está configurado para incrementar la version en un archivo custom y no en el package.json.
+This starter has the ability to auto-version itself through the GitHub Actions workflow (`./.github/workflows/release.yml`), as it uses the [standard-version](https://github.com/conventional-changelog/standard-version) dependency and the repository's `conventional commits`. Currently, it is configured to increment the version in a custom file and not in package.json.
 
-Para poder realizar el versionado correcto en su proyecto, siga estos pasos.
+To perform correct versioning in your project, follow these steps.
 
-- Asegurarse de que la version del `package.json` este en un valor inicial (`1.0.0`), y los datos de la aplicación ajustados.
-- Correr el siguiente script para borrar cualquier posible tag local o remoto:
+- Make sure the `package.json` version is at an initial value (`1.0.0`), and the application data is adjusted.
+- Run the following script to delete any possible local or remote tags:
 
 ```sh
 git tag -d $(git tag -l)
@@ -422,8 +403,8 @@ git fetch
 git tag -l | xargs -n 1 git push --delete origin
 ```
 
-- Borrar los archivos `CHANGELOG.md` y `version.txt`
-- Editar el workflow [`release.yml`](./.github/workflows/release.yml) para que el versionado solo se realice si es una aplicación.
+- Delete the `CHANGELOG.md` and `version.txt` files
+- Edit the [`release.yml`](./.github/workflows/release.yml) workflow so that versioning only occurs if it's an application.
 
 ## 📄 Changelog
 
