@@ -13,6 +13,7 @@ import { HttpClientInterceptor, HttpClientModule } from '@tresdoce-nestjs-toolki
 import { UtilsModule } from './utils/utils.module';
 import { UsersModule } from './users/users.module';
 import { CharactersModule } from './characters/characters.module';
+import { SessionsModule } from './sessions/sessions.module';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
@@ -35,6 +36,7 @@ import { getEnvFilePath, config, validationSchema } from './config';
     UtilsModule,
     CharactersModule,
     UsersModule,
+    SessionsModule,
   ],
   controllers: [AppController],
   providers: [

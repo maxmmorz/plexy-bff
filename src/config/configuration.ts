@@ -57,6 +57,11 @@ export default registerAs(
         timeout: 3000,
         healthPath: process.env.RICK_AND_MORTY_API_URL_LIVENESS,
       },
+      adyen: {
+        url: process.env.ADYEN_API_URL || 'https://checkout-test.adyen.com/v69',
+        apiKey: process.env.ADYEN_API_KEY,
+        timeout: 5000,
+      },
     },
   }),
 );
